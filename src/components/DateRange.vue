@@ -8,22 +8,29 @@
       />
     </div>
     <div class="md:w-2/3">
-      <input
-        :class="fieldClasses"
-        :id="fieldId"
-        :type="fieldType"
-        :placeholder="fieldPlaceholder"
-        :aria-placeholder="fieldPlaceholder"
-        :value="fieldValue"
-        autocomplete="off"
-        aria-autocomplete="off"
+      <VueTailwindDatePicker
+        v-model="dateValue"
+        overlay
+        separator=" - "
+        :formatter="dateFormatter"
+        :input-classes="fieldClasses"
       />
     </div>
   </fieldset>
 </template>
 
 <script>
+import { ref } from "vue";
+import VueTailwindDatePicker from "vue-tailwind-datepicker";
+
 export default {
+  setup: () => {
+    const dateValue = ref([]);
+    const formatter = ref({
+      date: "DD MMM YYYY",
+      month: "MMM",
+    });
+  },
   props: {
     fieldClasses: {
       type: String,
@@ -51,6 +58,7 @@ export default {
       default: "",
     },
   },
+  components: { VueTailwindDatePicker },
   name: "InputField",
 };
 </script>

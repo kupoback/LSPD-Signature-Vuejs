@@ -1,11 +1,13 @@
 <script>
 import InputField from "../FormComponents/InputField.vue";
 import FormButton from "../FormComponents/FormButton.vue";
+import DateRange from "../DateRange.vue";
+
 export default {
   data: () => ({
     linePlaceholder: "Bureau - Division - Position",
   }),
-  components: { FormButton, InputField },
+  components: { FormButton, InputField, DateRange },
   methods: {},
   computed: {},
   name: "FormView",
@@ -25,10 +27,10 @@ export default {
         field-label="Badge Number"
         field-placeholder="00000"
       />
-      <InputField
-        :field-id="servingTime"
-        field-label="Serving Time"
-        field-placeholder="11/Aug/2017 - Present"
+      <DateRange
+        :fieldId="servingTime"
+        fieldLabel="Serving Time"
+        fieldClasses="appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
       />
       <InputField
         :field-id="lineOne"
