@@ -13,7 +13,7 @@ export default {
 </script>
 
 <template>
-  <div class="w-full max-w-xs">
+  <div class="w-full">
     <form class="px-8 pt-6 pb-8 mb-4">
       <InputField
         :field-id="name"

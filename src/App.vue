@@ -4,19 +4,36 @@ import LogoSVG from "./assets/logo.svg?component";
 </script>
 
 <template>
-  <div class="container-full bg-gray-800">
-    <header class="container py-2">
-      <nav class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-        <div
-          class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start"
-        >
-          <LogoSVG alt="Vite logo" class="logo" height="30px" width="40px" />
+  <header class="container py-2 mx-auto">
+    <nav class="flex items-center justify-between flex-wrap bg-teal-500 p-6">
+      <div class="flex items-center flex-shrink-0 text-white mr-6">
+        <LogoSVG
+          alt="Vite logo"
+          class="fill-current h-8 w-8 mr-2"
+          height="30px"
+          width="40px"
+        />
+      </div>
+      <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+        <div class="text-sm lg:flex-grow">
+          <a
+            href="#responsive-header"
+            class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
+          >
+            Docs
+          </a>
+          <a
+            href="#responsive-header"
+            class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
+          >
+            Examples
+          </a>
         </div>
-      </nav>
-    </header>
+      </div>
+    </nav>
+  </header>
 
-    <RouterView />
-  </div>
+  <RouterView />
 </template>
 
 <style lang="scss" scoped></style>
