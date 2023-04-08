@@ -8,23 +8,37 @@
             />
         </div>
         <div class="md:w-2/3">
-            <input
-                v-model="inputValue"
-                :class="fieldClasses"
-                :id="fieldId"
-                :type="fieldType"
-                :placeholder="fieldPlaceholder"
-                :aria-placeholder="fieldPlaceholder"
-                :value="inputValue"
-                autocomplete="off"
-                aria-autocomplete="off"
-                @keyup="focusAction()"
+            <VueTailwindDatePicker
+                v-model="dateValue"
+                overlay
+                as-single
+                :formatter="dateFormatter"
+                :input-classes="fieldClasses"
+                @update:modelValue="onSelectedDate($event)"
             />
         </div>
     </fieldset>
 </template>
 
+<script setup>
+import { ref } from "vue";
+import { formStore } from "../../stores/personalForm";
+// Methods
+const { updateState } = formStore();
+
+const dateValue = ref(formStore()?.servingTime || "");
+const dateFormatter = ref({
+    date: "DD/MMM/YYYY",
+    month: "MMM",
+});
+
+const onSelectedDate = (newDate) =>
+    updateState({ field: "servingTime", value: newDate });
+</script>
+
 <script>
+import VueTailwindDatePicker from "vue-tailwind-datepicker";
+
 export default {
     props: {
         fieldClasses: {
@@ -33,7 +47,7 @@ export default {
                 "appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500",
         },
         fieldId: {
-            type: [Number, String],
+            type: String,
             default: "",
         },
         fieldLabel: {
@@ -52,25 +66,8 @@ export default {
             type: String,
             default: "",
         },
-        focusEvent: {
-            type: Function,
-            default: () => {},
-        },
     },
-    data: () => ({
-        inputValue: "",
-    }),
-    mounted() {
-        this.fieldValue.length && (this.inputValue = this.fieldValue)
-    },
-    methods: {
-        focusAction() {
-            this.focusEvent({
-                field: this.fieldId,
-                value: this.inputValue,
-            });
-        },
-    },
+    components: { VueTailwindDatePicker },
     name: "InputField",
 };
 </script>

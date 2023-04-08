@@ -1,35 +1,56 @@
 {
-  "name": "lspd-signature-vuejs",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
-  },
-  "dependencies": {
-    "dayjs": "^1.11.7",
-    "pinia": "^2.0.28",
-    "vue": "^3.2.45",
-    "vue-router": "^4.1.6",
-    "vue-tailwind-datepicker": "^1.2.12"
-  },
-  "devDependencies": {
-    "@rushstack/eslint-patch": "^1.1.4",
-    "@tailwindcss/forms": "^0.5.3",
-    "@vitejs/plugin-vue": "^4.0.0",
-    "@vitejs/plugin-vue-jsx": "^3.0.0",
-    "@vue/eslint-config-prettier": "^7.0.0",
-    "autoprefixer": "^10.4.13",
-    "eslint": "^8.22.0",
-    "eslint-plugin-vue": "^9.3.0",
-    "postcss": "^8.4.20",
-    "postcss-import": "^15.1.0",
-    "prettier": "^2.7.1",
-    "sass": "^1.57.1",
-    "tailwindcss": "^3.2.4",
-    "vite": "^4.0.0",
-    "vite-svg-loader": "^4.0.0"
-  }
+    "name": "lspd-signature-vuejs",
+    "version": "0.0.0",
+    "private": true,
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview",
+        "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
+    },
+    "dependencies": {
+        "dayjs": "^1.11",
+        "pinia": "^2.0",
+        "vue": "^3.2",
+        "vue-router": "^4.1",
+        "vue-tailwind-datepicker": "^1.2"
+    },
+    "devDependencies": {
+        "@rushstack/eslint-patch": "^1.1",
+        "@tailwindcss/forms": "^0.5",
+        "@vitejs/plugin-vue": "^4.0",
+        "@vitejs/plugin-vue-jsx": "^3.0",
+        "@vue/eslint-config-prettier": "^7.0",
+        "@vueuse/core": "^9.13.0",
+        "autoprefixer": "^10.4",
+        "eslint": "^8.22",
+        "eslint-plugin-vue": "^9.3",
+        "postcss": "^8.4",
+        "postcss-import": "^15.0",
+        "prettier": "^2.7",
+        "sass": "^1.57",
+        "tailwindcss": "^3.2",
+        "vite": "^4.0",
+        "vite-svg-loader": "^4.0"
+    },
+    "eslintConfig": {
+        "root": true,
+        "env": {
+            "node": true
+        },
+        "extends": [
+            "plugin:vue/essential",
+            "plugin:prettier/recommended",
+            "eslint:recommended",
+            "plugin:vue/vue3-recommended"
+        ],
+        "parserOptions": {
+            "parser": "babel-eslint"
+        },
+        "rules": {},
+        "globals": {
+            "window": true,
+            "module": true
+        }
+    }
 }
