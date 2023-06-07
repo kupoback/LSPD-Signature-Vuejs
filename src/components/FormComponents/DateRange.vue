@@ -22,7 +22,7 @@
 
 <script setup>
 import { ref } from "vue";
-import { formStore } from "../../stores/personalForm";
+import { formStore } from "@/stores/personalForm";
 // Methods
 const { updateState } = formStore();
 

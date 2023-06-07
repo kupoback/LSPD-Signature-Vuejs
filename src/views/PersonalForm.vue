@@ -1,7 +1,7 @@
 <script setup>
 import Form from "../components/Forms/PersonalForm.vue";
-import { mapState } from "pinia";
-import { formStore } from "../stores/personalForm";
+// import { mapState } from "pinia";
+// import { formStore } from "../stores/personalForm";
 </script>
 
 <script>

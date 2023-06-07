@@ -7,24 +7,24 @@ const { addNewDivisionLine, removeDivisionLine, updateState } = formStore();
 </script>
 
 <script>
-import InputField from "../FormComponents/InputField.vue";
-import FormButton from "../FormComponents/FormButton.vue";
-import DateRange from "../FormComponents/DateRange.vue";
-import DivisionLine from "../FormComponents/DivisionLine.vue";
+    import InputField from "../FormComponents/InputField.vue";
+    import FormButton from "../FormComponents/FormButton.vue";
+    import DateRange from "../FormComponents/DateRange.vue";
+    import DivisionLine from "../FormComponents/DivisionLine.vue";
 
-export default {
-    methods: {},
-    computed: {
-        ...mapState(formStore, [
-            "divisionLineArray",
-            "name",
-            "badgeNumber",
-            "rank",
-        ]),
-    },
-    components: { DivisionLine, FormButton, InputField, DateRange },
-    name: "FormView",
-};
+    export default {
+        methods: {},
+        computed: {
+            ...mapState(formStore, [
+                "divisionLineArray",
+                "name",
+                "badgeNumber",
+                "rank",
+            ]),
+        },
+        components: { DivisionLine, FormButton, InputField, DateRange },
+        name: "FormView",
+    };
 </script>
 
 <template>

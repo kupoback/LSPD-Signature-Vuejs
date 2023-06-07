@@ -1,30 +1,30 @@
 <script>
-export default {
-    props: {
-        buttonAction: {
-            type: Function,
-            default: () => {},
+    export default {
+        props: {
+            buttonAction: {
+                type: Function,
+                default: () => {},
+            },
+            buttonClass: {
+                type: String,
+                default: "",
+            },
+            buttonLabel: {
+                type: String,
+                default: "",
+            },
+            buttonType: {
+                type: String,
+                default: "button",
+            },
+            fieldSetClass: {
+                type: String,
+                default: "",
+            },
         },
-        buttonClass: {
-            type: String,
-            default: "",
-        },
-        buttonLabel: {
-            type: String,
-            default: "",
-        },
-        buttonType: {
-            type: String,
-            default: "button",
-        },
-        fieldSetClass: {
-            type: String,
-            default: "",
-        },
-    },
-    methods: {},
-    emits: {},
-};
+        methods: {},
+        emits: {},
+    };
 </script>
 
 <template>

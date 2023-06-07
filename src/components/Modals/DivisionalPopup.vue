@@ -11,8 +11,8 @@
     </div>
 </template>
 <script setup>
-import { mapActions } from "pinia";
-import { formStore } from "../../stores/personalForm";
+// import { mapActions } from "pinia";
+import { formStore } from "@/stores/personalForm";
 // const { toggleDivisionPopup } = formStore();
 </script>
 
@@ -24,9 +24,9 @@ export default {
             class: "dark:bg-green-400 focus:shadow-outline focus:outline-none text-black font-bold py-2 px-4 rounded dark:text-white",
             label: "Okay",
         },
-  }),
-  methods: {
-      // ...mapActions(formStore, ['toggleDivisionPopup'])
+    }),
+    methods: {
+        // ...mapActions(formStore, ['toggleDivisionPopup'])
     },
     components: { ModalContents },
     name: "DivisionalModalPopup",

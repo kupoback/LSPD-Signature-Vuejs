@@ -25,54 +25,54 @@
 </template>
 
 <script>
-export default {
-    props: {
-        fieldClasses: {
-            type: String,
-            default:
-                "appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500",
+    export default {
+        props: {
+            fieldClasses: {
+                type: String,
+                default:
+                    "appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500",
+            },
+            fieldId: {
+                type: [Number, String],
+                default: "",
+            },
+            fieldLabel: {
+                type: String,
+                default: "",
+            },
+            fieldPlaceholder: {
+                type: String,
+                default: "",
+            },
+            fieldType: {
+                type: String,
+                default: "text",
+            },
+            fieldValue: {
+                type: String,
+                default: "",
+            },
+            focusEvent: {
+                type: Function,
+                default: () => {},
+            },
         },
-        fieldId: {
-            type: [Number, String],
-            default: "",
+        data: () => ({
+            inputValue: "",
+        }),
+        mounted() {
+            this.fieldValue.length && (this.inputValue = this.fieldValue);
         },
-        fieldLabel: {
-            type: String,
-            default: "",
+        methods: {
+            focusAction() {
+                this.focusEvent({
+                    field: this.fieldId,
+                    value: this.inputValue,
+                });
+            },
         },
-        fieldPlaceholder: {
-            type: String,
-            default: "",
-        },
-        fieldType: {
-            type: String,
-            default: "text",
-        },
-        fieldValue: {
-            type: String,
-            default: "",
-        },
-        focusEvent: {
-            type: Function,
-            default: () => {},
-        },
-    },
-    data: () => ({
-        inputValue: "",
-    }),
-    mounted() {
-        this.fieldValue.length && (this.inputValue = this.fieldValue)
-    },
-    methods: {
-        focusAction() {
-            this.focusEvent({
-                field: this.fieldId,
-                value: this.inputValue,
-            });
-        },
-    },
-    name: "InputField",
-};
+        name: "InputField",
+    };
 </script>
 
 <style lang="scss" scoped></style>
